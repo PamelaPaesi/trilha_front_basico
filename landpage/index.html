@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>CodeLab.</title>
+  </head>
+  <body>
+    <div class="left"></div>
+    <div class="right">
+        <div class="login-box">
+            <p>Bem-vindo de volta</p>
+            <h1>Faça login na sua conta</h1>
+            <label class="lbl-text">E-mail</label>
+            <input class="input-text" type="email" id="email" placeholder="exemplo@gmail.com">
+            <label class="lbl-text">Senha</label>
+            <input class="input-text" type="password" id="password" placeholder="Senha">
+            <div class="row">
+              <label>
+                <input type="radio" id="lembrar"> Lembre de mim
+              </label>
+              <a href="#">Esqueceu sua senha?</a>
+            </div>
+            <button class="btn-login" onclick="showLogin()">Entrar na conta</button>
+            <button class="btn-google">
+              <img src="images/google.png">
+              Ou faça login com o Google
+            </button>
+            <label class="lbl-cadastre">
+              Não tem uma conta? <a href="#">Cadastre-se</a>
+            </label>
+        </div>
+    </div>  
+  </body>
+  <script>
+    function showLogin() {
+      const 
+        email = document.getElementById("email");
+        senha = document.getElementById("password");
+      
+      email.classList.remove("erro");
+      senha.classList.remove("erro");
+      
+      if (email.value.trim() === "") {
+        email.classList.add("erro");
+      }
+
+      if (senha.value.trim() === "") {
+        senha.classList.add("erro");
+      }
+      if (email.value === "" || senha.value === "") {
+        alert("Por favor, preencha todos os campos.");
+      } else {
+        alert("E-mail: " + email.value + "\nSenha: " + senha.value);
+      }
+    }
+  </script>
+</html>
